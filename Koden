@@ -1,12 +1,39 @@
+let dækket = [];
+let spiller1h = [];
+
 function setup() {
+  createCanvas(400, 400);
+  
+  
+  //Indsætter 52 "Kort" i "dækket"
+  for (let i = 0; i < 52; i++){
+    dækket.push(new Kort());
+  }
+  
+}
 
-createCanvas(500,500);
-
-
+function draw() {
+  background(220);
+  
 }
 
 
+function keyPressed() {
+  
+  //Tilføjer et tilfældigt kort fra "dækket" og indsætter det i "spiller1h"
+  if (keyCode === SHIFT){
+    
+    let i = int(random(0,53));
+    spiller1h.push(dækket[i]);
+    dækket.splice(i,1);
+    
+  }
+  
+}
 
-function draw() {
 
+class Kort {
+  constructor(){
+    this.number = dækket.length +1;
+  }
 }
