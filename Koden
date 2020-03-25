@@ -1,5 +1,7 @@
 let dækket = [];
 let spiller1h = [];
+let spiller2h = [];
+let spiller3h = [];
 
 function setup() {
   createCanvas(400, 400);
@@ -10,13 +12,29 @@ function setup() {
     dækket.push(new Kort());
   }
   
+  //Trækker 5 kort til 3 spillere
+  for (let i = 0; i < 5; i++){
+    let i = int(random(0,53));
+      spiller1h.push(dækket[i]);
+      dækket.splice(i,1);
+  }
+  for (let i = 0; i < 5; i++){
+    let i = int(random(0,53));
+      spiller2h.push(dækket[i]);
+      dækket.splice(i,1);
+  }
+  for (let i = 0; i < 5; i++){
+    let i = int(random(0,53));
+      spiller3h.push(dækket[i]);
+      dækket.splice(i,1);
+  }
+  
 }
 
 function draw() {
   background(220);
   
 }
-
 
 function keyPressed() {
   
